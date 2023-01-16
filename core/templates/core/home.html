@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="wisth=device-eidth, user-scalable=no, initial-scale=1.0, maximum-scale-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" conten="ie-edge">
+    <title> Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background: linear-gradient(to right, #00AAFF, #00FF6C);
+        }
+        h1 {
+            background-color: rgba(255, 255, 255, .75);
+            text-align: center;
+            
+        }
+        * {
+            margin: 0;
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            box-sizing: border-box;
+        }
+        #main {
+            text-align: center;
+            padding-top: 50px;
+        }
+        input[type='text'] {
+            width: 30%;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 5px;
+            margin-top:  20px;
+        }
+        input[type='submit'] {
+            width: 30%;
+            padding: 10px;
+            border: 2px solid black;
+            background: black;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        form {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <!-- <h1>Find the weather</h1> -->
+    <h1>
+        <span style="color:lightgreen">Find</span> <span style="color:skyblue">the</span>
+        <span style="color:lightgreen">wea</span><span style="color:skyblue">ther</span>
+    
+    </h1>
+    <form method="GET">
+        <label for="city"></label>
+        <input type="text" name="city" id="city" value=""{{ requesst.GET.city }} placeholder="city..."> <br>
+        <input type="submit" value="submit" />
+    </form>
+    {% if weather_data %}
+        <h3>{{ weather_data.region }}</h3>
+        <h3>{{ weather_data.dayhour }}</h3>
+        <h3>{{ weather_data.weather_now }}</h3>
+        <h3>{{ weather_data.temp_now }}</h3>
+        <!-- ° c -->
+    {% endif %}
+    
+</div>
+</body>
+</html>

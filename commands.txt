@@ -1,0 +1,10 @@
+virtualenv venv     #create virtual environment
+python3.10 -m venv venv  # Create a virtual environment
+source venv/bin/activate      #to activate virtualenv
+django admin startproject weatherapp  #create project in django
+django-admin startapp core
+
+pip install django requests beautifulsoup4
+pip install -r requirements.txt
+pip freeze > requirements.txt
+pip3 install --upgrade pip
